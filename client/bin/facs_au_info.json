@@ -1,0 +1,218 @@
+[
+  {
+    "AU1R+AU1L": {
+      "name": "Inner brow raiser",
+      "action_units": [1]
+    }
+  },
+  {
+    "AU2R+AU2L": {
+      "name": "Outer brow raiser",
+      "action_units": [2]
+    }
+  },
+  {
+    "AU1AU2R+AU1AU2L": {
+      "name": "Brow raiser",
+      "action_units": [1,2]
+    }
+  },
+  {
+    "AU4R+AU4L": {
+      "name": "Brow lowerer",
+      "action_units": [4]
+    }
+  },
+  {
+    "AU1AU4R+AU1AU4L": {
+      "name": "Brow confused",
+      "action_units": [1,4]
+    }
+  },
+  {
+    "AU2AU4R+AU2AU4L": {
+      "name": "Brow angry",
+      "action_units": [4]
+    }
+  },
+  {
+    "AU6R+AU6L": {
+      "name": "Cheek raiser",
+      "action_units": [6]
+    }
+  },
+  {
+    "AU9R+AU9L": {
+      "name": "Noser wrinkler",
+      "action_units": [9]
+    }
+  },
+  {
+    "AU10R+AU10L": {
+      "name": "Upper lip raiser",
+      "action_units": [10]
+    }
+  },
+  {
+    "AU10CR+AU10CL": {
+      "name": "Stench",
+      "action_units": [10]
+    }
+  },
+  {
+    "AU10SL": {
+      "name": "Left upper lip raiser",
+      "action_units": [10]
+    }
+  },
+  {
+    "AU10SR": {
+      "name": "Right upper lip raiser",
+      "action_units": [10]
+    }
+  },
+  {
+    "AU12R+AU12L": {
+      "name": "Lip corner puller",
+      "action_units": [12]
+    }
+  },
+  {
+    "AU12AU25R+AU12AU25L": {
+      "name": "Jaw sideways",
+      "action_units": [12, 25]
+    }
+  },
+  {
+    "AU13R+AU13L": {
+      "name": "Sharp lip puller",
+      "action_units": [13]
+    }
+  },
+  {
+    "AU14R+AU14L": {
+      "name": "Dimpler",
+      "action_units": [14]
+    }
+  },
+  {
+    "AU15R+AU15L": {
+      "name": "Lip corner depressor",
+      "action_units": [15]
+    }
+  },
+  {
+    "AU16": {
+      "name": "Lower lip depressor",
+      "action_units": [16]
+    }
+  },
+  {
+    "AU17R+AU17L": {
+      "name": "Chin raiser",
+      "action_units": [17]
+    }
+  },
+  {
+    "AU18R+AU18L": {
+      "name": "Lip pucker",
+      "action_units": [18]
+    }
+  },
+  {
+    "AU20R+AU20L": {
+      "name": "Lip stretcher",
+      "action_units": [20]
+    }
+  },
+  {
+    "AU22R+AU22L": {
+      "name": "Lip funneler",
+      "action_units": [22]
+    }
+  },
+  {
+    "AU22ZR+AU22ZL": {
+      "name": "Lip far funneler",
+      "action_units": [22]
+    }
+  },
+  {
+    "AU24": {
+      "name": "Lip pressor",
+      "action_units": [24]
+    }
+  },
+  {
+    "AU25R+AU25L": {
+      "name": "Lips part",
+      "action_units": [25]
+    }
+  },
+  {
+    "AU26R+AU26L": {
+      "name": "Jaw drop",
+      "action_units": [26]
+    }
+  },
+  {
+    "AU27R+AU27L": {
+      "name": "Mouth stretch",
+      "action_units": [27]
+    }
+  },
+  {
+    "AU27ZR+AU27ZL": {
+      "name": "Mouth opener",
+      "action_units": [27]
+    }
+  },
+  {
+    "AU31": {
+      "name": "Jaw clencher",
+      "action_units": [31]
+    }
+  },
+  {
+    "AU32": {
+      "name": "Lip bite",
+      "action_units": [32]
+    }
+  },
+  {
+    "AU38": {
+      "name": "Nostril dilator",
+      "action_units": [38]
+    }
+  },
+  {
+    "AD96L": {
+      "name": "Mouth left",
+      "action_units": []
+    }
+  },
+  {
+    "AD96R": {
+      "name": "Mouth right",
+      "action_units": []
+    }
+  },
+  {
+    "AD30L": {
+      "name": "Jaw left",
+      "action_units": []
+    }
+  },
+  {
+    "AD30R": {
+      "name": "Jaw right",
+      "action_units": []
+    }
+  },
+  {
+    "AD32": {
+      "name": "Lip tightener",
+      "action_units": []
+    }
+  }
+]

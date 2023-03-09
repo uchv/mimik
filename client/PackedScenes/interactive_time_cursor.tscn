@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cii1grtohpviw"]
+
+[ext_resource type="Script" path="res://PackedScenes/interactive_time_cursor.gd" id="1_kewdb"]
+
+[node name="interactive_time_cursor" type="Control"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 10
+script = ExtResource("1_kewdb")

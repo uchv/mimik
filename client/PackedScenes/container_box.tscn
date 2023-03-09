@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://b441xr083s60i"]
+
+[ext_resource type="Script" path="res://PackedScenes/container_box.gd" id="1_ynrm4"]
+
+[node name="container_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ynrm4")
+color_1_main = Color(0.835294, 0.215686, 0.160784, 1)
+color_1_border = Color(0.647059, 0.172549, 0.129412, 1)
+color_2_main = Color(0, 0.823529, 0, 1)
+color_2_border = Color(0, 0.6, 0, 1)
+
+[node name="ResizeLeft" type="Control" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="ResizeRight" type="Control" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[connection signal="gui_input" from="ResizeLeft" to="." method="_on_resize_gui_input" binds= [false]]
+[connection signal="gui_input" from="ResizeRight" to="." method="_on_resize_gui_input" binds= [true]]

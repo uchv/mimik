@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyn86vfgkj7iq"]
+
+[ext_resource type="Script" path="res://WindowContent/window_viewport.gd" id="1_6564l"]
+[ext_resource type="PackedScene" uid="uid://cevmbv7trq4qn" path="res://PackedScenes/ViewportSceneBase.tscn" id="1_fsqc3"]
+[ext_resource type="Texture2D" uid="uid://bkg8e0exgvdjs" path="res://icons/actionPlay.svg" id="3_bm2da"]
+[ext_resource type="Texture2D" uid="uid://djqhiiwd048hg" path="res://icons/actionPause.svg" id="4_udhs2"]
+[ext_resource type="Texture2D" uid="uid://byg8t25xfdtcf" path="res://icons/actionStop.svg" id="5_i4v5e"]
+
+[node name="window_viewport" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -706.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6564l")
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -46.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Container"]
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 340.0
+size_flags_vertical = 3
+
+[node name="SubViewport" type="SubViewport" parent="Container/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(400, 340)
+render_target_update_mode = 4
+
+[node name="ViewportSceneBase" parent="Container/SubViewportContainer/SubViewport" instance=ExtResource("1_fsqc3")]
+
+[node name="ButtonHolder" type="ColorRect" parent="Container"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+offset_top = 344.0
+offset_right = 400.0
+offset_bottom = 394.0
+size_flags_vertical = 10
+color = Color(0.278431, 0.278431, 0.278431, 1)
+
+[node name="PlayButton" type="Button" parent="Container/ButtonHolder"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -25.5
+offset_right = 43.0
+offset_bottom = 20.4
+grow_vertical = 2
+icon = ExtResource("3_bm2da")
+flat = true
+expand_icon = true
+
+[node name="PauseButton" type="Button" parent="Container/ButtonHolder"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -25.5
+offset_right = 97.0
+offset_bottom = 20.4
+grow_vertical = 2
+icon = ExtResource("4_udhs2")
+flat = true
+expand_icon = true
+
+[node name="StopButton" type="Button" parent="Container/ButtonHolder"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 123.0
+offset_top = -31.0
+offset_right = 163.0
+offset_bottom = 25.0
+grow_vertical = 2
+icon = ExtResource("5_i4v5e")
+flat = true
+expand_icon = true
+
+[node name="LineEdit" type="LineEdit" parent="Container/ButtonHolder"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -67.0625
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "0.0"
+virtual_keyboard_type = 3
+flat = true
+
+[connection signal="pressed" from="Container/ButtonHolder/PlayButton" to="." method="_on_playback_button_pressed" binds= [0]]
+[connection signal="pressed" from="Container/ButtonHolder/PauseButton" to="." method="_on_playback_button_pressed" binds= [1]]
+[connection signal="pressed" from="Container/ButtonHolder/StopButton" to="." method="_on_playback_button_pressed" binds= [2]]
+[connection signal="text_changed" from="Container/ButtonHolder/LineEdit" to="." method="_on_line_edit_text_changed"]

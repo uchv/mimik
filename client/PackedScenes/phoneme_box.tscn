@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0noi38wcvklm"]
+
+[ext_resource type="Script" path="res://PackedScenes/phoneme_box.gd" id="1_wbrwc"]
+
+[node name="phoneme_box" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_wbrwc")
+color_main = Color(0, 0.878431, 0.878431, 1)
+color_border = Color(0, 0.67451, 0.67451, 1)
+
+[node name="ResizeLeft" type="Control" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="ResizeRight" type="Control" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[connection signal="gui_input" from="ResizeLeft" to="." method="_on_resize_gui_input" binds= [false]]
+[connection signal="gui_input" from="ResizeRight" to="." method="_on_resize_gui_input" binds= [true]]

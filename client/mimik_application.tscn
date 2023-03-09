@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://j4xr4g7d8g0p"]
+
+[ext_resource type="Script" path="res://app.gd" id="1_5ksp8"]
+[ext_resource type="Texture2D" uid="uid://d4e0rfalnejjc" path="res://icons/icon_new_file.png" id="2_dxegg"]
+[ext_resource type="Texture2D" uid="uid://bq8rfp0q24frx" path="res://icons/icon_open_file.png" id="3_f2bak"]
+[ext_resource type="Texture2D" uid="uid://cv70s01irjcqs" path="res://icons/icon_save_file.png" id="4_yvbkr"]
+[ext_resource type="Texture2D" uid="uid://dbkyswghrklsa" path="res://icons/icon_windows.png" id="5_e6f7o"]
+[ext_resource type="Texture2D" uid="uid://o4x4tb58ipu" path="res://icons/icon_exit.png" id="6_qum2h"]
+
+[node name="MimikApplication" type="MimikApplication"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_5ksp8")
+
+[node name="toolbar" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="container" type="HBoxContainer" parent="toolbar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="button_new_file" type="Button" parent="toolbar/container"]
+offset_right = 108.0
+offset_bottom = 50.0
+text = "New File"
+icon = ExtResource("2_dxegg")
+
+[node name="button_open_file" type="Button" parent="toolbar/container"]
+offset_left = 112.0
+offset_right = 227.0
+offset_bottom = 50.0
+text = "Open File"
+icon = ExtResource("3_f2bak")
+
+[node name="button_save_file" type="Button" parent="toolbar/container"]
+offset_left = 231.0
+offset_right = 340.0
+offset_bottom = 50.0
+text = "Save File"
+icon = ExtResource("4_yvbkr")
+
+[node name="button_windows" type="Button" parent="toolbar/container"]
+offset_left = 344.0
+offset_right = 457.0
+offset_bottom = 50.0
+text = "Windows"
+icon = ExtResource("5_e6f7o")
+
+[node name="popup_windows" type="PopupMenu" parent="toolbar/container/button_windows"]
+position = Vector2i(168, 48)
+size = Vector2i(124, 100)
+
+[node name="container_right" type="HBoxContainer" parent="toolbar"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -15.5
+offset_right = -5.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="button_exit" type="Button" parent="toolbar/container_right"]
+offset_right = 75.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+text = " Exit
+"
+icon = ExtResource("6_qum2h")
+
+[node name="file_dialog_save" type="FileDialog" parent="."]
+title = "Save File"
+position = Vector2i(30, 100)
+size = Vector2i(452, 350)
+ok_button_text = "Save"
+access = 2
+
+[connection signal="pressed" from="toolbar/container/button_save_file" to="." method="_on_button_save_file_pressed"]
+[connection signal="pressed" from="toolbar/container/button_windows" to="." method="_on_button_windows_pressed"]
+[connection signal="id_pressed" from="toolbar/container/button_windows/popup_windows" to="." method="_on_popup_window_pressed"]
+[connection signal="pressed" from="toolbar/container_right/button_exit" to="." method="_on_button_exit_pressed"]
+[connection signal="confirmed" from="file_dialog_save" to="." method="_on_file_dialog_save_confirmed"]

@@ -1,0 +1,8 @@
+[configuration]
+
+entry_symbol = "mimik_library_init"
+
+[libraries]
+
+windows.x86_64.debug = "res://bin/mimik/libgdsummator.windows.template_debug.x86_64.dll"
+windows.x86_64.release = "res://bin/mimik/libgdsummator.windows.template_release.x86_64.dll"

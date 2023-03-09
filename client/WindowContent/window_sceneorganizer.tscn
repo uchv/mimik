@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4een6xjwlwk8"]
+
+[ext_resource type="Script" path="res://WindowContent/window_sceneorganizer.gd" id="1_n6lqm"]
+[ext_resource type="Script" path="res://WindowContent/timeline_scene.gd" id="2_kap4i"]
+[ext_resource type="Script" path="res://PackedScenes/interactive_time_cursor.gd" id="3_cinl2"]
+[ext_resource type="Texture2D" uid="uid://v2gp0v5dxv04" path="res://icons/icon_plus.png" id="4_4yde0"]
+
+[node name="window_sceneorganizer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6lqm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MK_SceneTimeline" type="MK_SceneTimeline" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("2_kap4i")
+
+[node name="rightclick_menu" type="PopupMenu" parent="VBoxContainer/MK_SceneTimeline"]
+size = Vector2i(226, 62)
+item_count = 5
+item_0/text = "Add Flex Animation Event"
+item_0/id = 0
+item_1/text = "Add Lip Sync Event"
+item_1/id = 1
+item_2/text = ""
+item_2/id = 4
+item_2/separator = true
+item_3/text = "Rename Actor"
+item_3/id = 2
+item_4/text = "Delete Actor"
+item_4/id = 3
+
+[node name="InteractiveTimeCursor" type="Control" parent="VBoxContainer/MK_SceneTimeline"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("3_cinl2")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_vertical = 8
+color = Color(0.230315, 0.230315, 0.230315, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 249.0
+offset_bottom = 40.0
+theme_override_constants/separation = 4
+
+[node name="button_add_actor" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_right = 123.0
+offset_bottom = 40.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = " Add Actor"
+icon = ExtResource("4_4yde0")
+
+[node name="Mode2" type="Button" parent="VBoxContainer/ColorRect/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 72.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 36.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "2"
+
+[node name="file_dialog_model" type="FileDialog" parent="."]
+title = "Choose Model for Actor"
+position = Vector2i(30, 100)
+size = Vector2i(452, 300)
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.gltf, *.glb")
+
+[connection signal="id_pressed" from="VBoxContainer/MK_SceneTimeline/rightclick_menu" to="VBoxContainer/MK_SceneTimeline" method="_on_rightclick_menu_id_pressed"]
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/button_add_actor" to="." method="_on_addactor_pressed"]
+[connection signal="pressed" from="VBoxContainer/ColorRect/HBoxContainer/Mode2" to="." method="_on_button3_pressed"]
+[connection signal="file_selected" from="file_dialog_model" to="." method="_on_file_dialog_model_chosen"]

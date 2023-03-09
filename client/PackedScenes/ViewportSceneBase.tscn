@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cevmbv7trq4qn"]
+
+[sub_resource type="Environment" id="Environment_hwmqq"]
+background_mode = 1
+background_color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="ViewportSceneBase" type="Node3D"]
+
+[node name="Viewport3DCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.922, 0.764)
+environment = SubResource("Environment_hwmqq")
+fov = 30.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.84459, 0.535414, 0, -0.535414, 0.84459, 0, 2.55159, 2.42138)
+spot_attenuation = 0.0525562

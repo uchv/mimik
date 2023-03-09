@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://78ufwf6xanhj"]
+
+[resource]
+mimik/colors/window_bar = Color(0.172549, 0.172549, 0.172549, 1)
+mimik/colors/window_body = Color(0.278431, 0.278431, 0.278431, 1)
+mimik/font_sizes/window_title = 14
